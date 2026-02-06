@@ -163,13 +163,3 @@ Virtual Machines are suitable when complete OS isolation is required, whereas co
 
 ---
 
-## Viva / Exam Key Points
-
-* Vagrant is a host-side tool used to manage virtual machines.
-* Containers share the host kernel, unlike VMs which run a full guest OS.
-* Docker provides lightweight virtualization compared to traditional hypervisors.
-* Port conflicts occur when multiple services try to bind to the same host port.
-
----
-
-**Experiment Completed Successfully ✅**
