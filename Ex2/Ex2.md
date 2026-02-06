@@ -107,7 +107,7 @@ docker ps -a
 
 ### 1. Running Nginx Container
 
-![Docker Run](screenshots/docker-run.png)
+![Docker Run](screenshots/docker-run.jpeg)
 
 *Figure 1: Running Nginx container using Docker run command.*
 
@@ -115,7 +115,7 @@ docker ps -a
 
 ### 2. Listing Running Containers
 
-![Docker PS](screenshots/docker-ps.png)
+![Docker PS](screenshots/docker-ps.jpeg)
 
 *Figure 2: Output of `docker ps` command.*
 
@@ -123,7 +123,7 @@ docker ps -a
 
 ### 3. Nginx Running in Browser
 
-![Nginx Browser](screenshots/nginx-browser.png)
+![Nginx Browser](screenshots/nginx-browser.jpeg)
 
 *Figure 3: Nginx welcome page accessed via browser.*
 
@@ -131,7 +131,7 @@ docker ps -a
 
 ### 4. Stopping and Removing Container
 
-![Docker Stop Remove](screenshots/docker-stop-rm.png)
+![Docker Stop Remove](screenshots/docker-stop-rm.jpeg)
 
 *Figure 4: Stopping and removing Docker container.*
 
