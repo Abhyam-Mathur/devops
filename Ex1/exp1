@@ -137,7 +137,7 @@ docker rmi nginx
 
 ### 1. Vagrant Version Check
 
-![Vagrant Version](screenshots/vagrant-version.png)
+![Vagrant Version](screenshots/vagrant-version.jpeg)
 
 *Figure 1: Verification of Vagrant installation on host machine.*
 
