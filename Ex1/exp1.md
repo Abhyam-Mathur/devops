@@ -6,17 +6,6 @@ To understand and compare the working of **Virtual Machines** and **Containers**
 
 ---
 
-## Software / Tools Required
-
-* Host OS: Windows 10
-* Virtualization Tool: VirtualBox
-* VM Management Tool: Vagrant (v2.4.9)
-* Guest OS: Ubuntu 22.04 (Jammy Jellyfish)
-* Container Platform: Docker
-* Web Server: Nginx
-
----
-
 ## Part A: Virtual Machine Setup Using Vagrant
 
 ### Step 1: Verify Vagrant Installation
@@ -137,31 +126,31 @@ docker rmi nginx
 
 ### 1. Vagrant Version Check
 
-![Vagrant Version](screenshots/vagrant-version.jpeg)
+![Vagrant Version](screenshots/vagrant-verification.jpeg)
 
 *Figure 1: Verification of Vagrant installation on host machine.*
 
 ### 2. Vagrant Virtual Machine Startup
 
-![Vagrant Up](screenshots/vagrant-up.png)
+![Vagrant Up](screenshots/vagrant-up.jpeg)
 
 *Figure 2: Successful initialization and startup of Ubuntu VM using Vagrant.*
 
 ### 3. Nginx Running Inside Virtual Machine
 
-![Nginx VM](screenshots/nginx-vm.png)
+![Nginx VM](screenshots/nginx-vm.jpeg)
 
 *Figure 3: Output confirming Nginx web server running inside the virtual machine.*
 
 ### 4. Nginx Running Inside Docker Container (Port 8080)
 
-![Docker Nginx 8080](screenshots/docker-nginx-8080.png)
+![Docker Nginx 8080](screenshots/docker-nginx-8080.jpeg)
 
 *Figure 4: Nginx web server deployed using Docker container on port 8080.*
 
 ### 5. Nginx Running Inside Docker Container (Port 8081)
 
-![Docker Nginx 8081](screenshots/docker-nginx-8081.png)
+![Docker Nginx 8081](screenshots/docker-nginx-8081.jpeg)
 
 *Figure 5: Nginx container running on an alternative port to avoid port conflict.*
 
