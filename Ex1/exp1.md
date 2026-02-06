@@ -132,7 +132,7 @@ docker rmi nginx
 
 ### 2. Vagrant Virtual Machine Startup
 
-![Vagrant Up](screenshots/vagrant-up.jpeg)
+![Vagrant Up](screenshot/vagrant-up.jpeg)
 
 *Figure 2: Successful initialization and startup of Ubuntu VM using Vagrant.*
 
