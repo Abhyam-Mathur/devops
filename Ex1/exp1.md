@@ -142,11 +142,11 @@ docker rmi nginx
 
 *Figure 3: Output confirming Nginx web server running inside the virtual machine.*
 
-### 4. Nginx Running Inside Docker Container (Port 8081)
+### 4. Nginx Running Inside Docker Container (Port 8080)
 
-![Docker Nginx 8080](screenshot/docker-nginx-8081.jpeg)
+![Docker Nginx 8080](screenshot/docker-nginx-8080.jpeg)
 
-*Figure 4: Nginx web server deployed using Docker container on port 8081.*
+*Figure 4: Nginx web server deployed using Docker container on port 8080.*
 
 
 ---
