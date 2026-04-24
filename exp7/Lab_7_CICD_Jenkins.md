@@ -1,4 +1,4 @@
-# Lab Experiment 7: CI/CD Pipeline using Jenkins, GitHub and Docker Hub
+﻿# Lab Experiment 7: CI/CD Pipeline using Jenkins, GitHub and Docker Hub
 
 
 ---
@@ -43,7 +43,7 @@ It provides:
 ### Workflow Overview
 
 ```
-Developer → GitHub → Webhook → Jenkins → Build → Docker Hub
+Developer â†’ GitHub â†’ Webhook â†’ Jenkins â†’ Build â†’ Docker Hub
 ```
 
 ---
@@ -63,13 +63,13 @@ Developer → GitHub → Webhook → Jenkins → Build → Docker Hub
 
 ```
 my-app/
-├── app.py
-├── requirements.txt
-├── Dockerfile
-├── Jenkinsfile
+â”œâ”€â”€ app.py
+â”œâ”€â”€ requirements.txt
+â”œâ”€â”€ Dockerfile
+â”œâ”€â”€ Jenkinsfile
 ```
 
-### 5.2 Application Code — `app.py`
+### 5.2 Application Code â€” `app.py`
 
 ```python
 from flask import Flask
@@ -159,7 +159,6 @@ services:
 volumes:
   jenkins_home:
 ```
-![alt text](image.png)
 ### 6.2 Start Jenkins
 
 ```bash
@@ -185,14 +184,14 @@ docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 ### 7.1 Add Docker Hub Credentials
 
-Path: `Manage Jenkins → Credentials → Add Credentials`
+Path: `Manage Jenkins â†’ Credentials â†’ Add Credentials`
 - **Type:** Secret Text
 - **ID:** `dockerhub-token`
 - **Value:** Docker Hub Access Token
 
 ### 7.2 Create Pipeline Job
 
-1. `New Item → Pipeline`
+1. `New Item â†’ Pipeline`
 2. **Name:** `ci-cd-pipeline`
 3. Configure:
    - Pipeline script from SCM
@@ -206,7 +205,7 @@ Path: `Manage Jenkins → Credentials → Add Credentials`
 
 ### 8.1 Configure Webhook
 
-In GitHub: `Settings → Webhooks → Add Webhook`
+In GitHub: `Settings â†’ Webhooks â†’ Add Webhook`
 - **Payload URL:** `http://<your-server-ip>:8080/github-webhook/`
 - **Events:** Push events
 
@@ -245,9 +244,9 @@ Jenkins runs inside Docker with the Docker socket mounted:
 /var/run/docker.sock
 ```
 
-This allows Jenkins to directly control the host's Docker daemon — building and pushing images without needing a separate agent node.
+This allows Jenkins to directly control the host's Docker daemon â€” building and pushing images without needing a separate agent node.
 
-A custom **Permanent Agent** node (`Abhyam node macos`) was also configured in Jenkins under `Manage Jenkins → Nodes → New Node` to demonstrate multi-node agent setup.
+A custom **Permanent Agent** node (`Abhyam node macos`) was also configured in Jenkins under `Manage Jenkins â†’ Nodes â†’ New Node` to demonstrate multi-node agent setup.
 
 ---
 
@@ -274,63 +273,54 @@ Successfully implemented a complete CI/CD pipeline where:
 
 ## 13. Screenshots
 
-### Screenshot 1 — Jenkins Plugin Installation (Getting Started)
-![Jenkins Getting Started - Plugin Setup]![alt text](image-1.png)
+### Screenshot 1 â€” Jenkins Plugin Installation (Getting Started)
 
 > Jenkins loading suggested plugins during the initial setup wizard at `localhost:8080`.
 
 ---
 
-### Screenshot 2 — Create First Admin User
-![Create First Admin User]![alt text](image-2.png)
+### Screenshot 2 â€” Create First Admin User
 
 > Creating the admin user `AbhyamMathur` during Jenkins initial configuration.
 
 ---
 
-### Screenshot 3 — LocalTunnel Warning Page
-![LocalTunnel Tunnel Warning]![alt text](image-3.png)
+### Screenshot 3 â€” LocalTunnel Warning Page
 
-> The localtunnel gateway page for `https://green-donuts-nail.loca.lt` — requiring IP confirmation before accessing Jenkins publicly.
+> The localtunnel gateway page for `https://green-donuts-nail.loca.lt` â€” requiring IP confirmation before accessing Jenkins publicly.
 
 ---
 
-### Screenshot 4 — LocalTunnel Setup in Terminal
-![LocalTunnel Terminal Setup]!![alt text](image-5.png)
+### Screenshot 4 â€” LocalTunnel Setup in Terminal
 
 > Terminal showing `npm install -g localtunnel`, `docker ps` confirming Jenkins container is running, and `npx localtunnel --port 8080` generating the public tunnel URL.
 
 ---
 
-### Screenshot 5 — LocalTunnel Connection Error (Firewall)
-![LocalTunnel Connection Error]![alt text](image-4.png)
+### Screenshot 5 â€” LocalTunnel Connection Error (Firewall)
 
-> Localtunnel connection refused error due to firewall settings — resolved by switching to `npx localtunnel` instead of the global `lt` command.
+> Localtunnel connection refused error due to firewall settings â€” resolved by switching to `npx localtunnel` instead of the global `lt` command.
 
 ---
 
-### Screenshot 6 — Jenkins Account Settings
-![Jenkins Account Settings]!![alt text](image-6.png)
+### Screenshot 6 â€” Jenkins Account Settings
 
 > Jenkins user account page for `abhyammathur` showing profile, credentials, and email settings via the localtunnel public URL.
 
 ---
 
-### Screenshot 7 — Adding New Node (Agent)
-![Jenkins New Node Creation]![alt text](image-7.png)
-> Creating a new Permanent Agent node named `Abhyam node` in Jenkins under `Manage Jenkins → Nodes → New Node`.
+### Screenshot 7 â€” Adding New Node (Agent)
+> Creating a new Permanent Agent node named `Abhyam node` in Jenkins under `Manage Jenkins â†’ Nodes â†’ New Node`.
 
 ---
 
-### Screenshot 8 — Nodes Dashboard
-![alt text](image-8.png)
+### Screenshot 8 â€” Nodes Dashboard
 
 > Jenkins Nodes page showing the `Built-In Node` (Linux aarch64) and the newly added `Abhyam node macos` agent.
 
 ---
 
-### Screenshot 9 — Agent Connection Command
-![Jenkins Agent Command]![alt text](image-9.png)
+### Screenshot 9 â€” Agent Connection Command
 
 > Jenkins displaying the JNLP agent connection commands (Unix/Windows) with a secret token to connect `Abhyam node macos` as a remote agent.
 
@@ -342,7 +332,7 @@ Successfully implemented a complete CI/CD pipeline where:
 It defines the CI/CD pipeline as code, stored in the repository alongside the application source.
 
 **Q2. How does Jenkins integrate with GitHub?**
-Through GitHub Webhooks — GitHub sends a POST request to Jenkins on every push event, triggering the pipeline automatically.
+Through GitHub Webhooks â€” GitHub sends a POST request to Jenkins on every push event, triggering the pipeline automatically.
 
 **Q3. Why is Docker used in CI/CD?**
 Docker ensures consistent, reproducible builds across different environments by packaging the application and its dependencies into an image.
@@ -361,7 +351,7 @@ Jenkins can directly invoke Docker commands on the host, eliminating the need fo
 ## 15. Key Takeaways
 
 - Jenkins is GUI-based but pipelines are fully code-driven via `Jenkinsfile`
-- Always use the credentials store — **never hardcode secrets**
+- Always use the credentials store â€” **never hardcode secrets**
 - Webhooks make CI/CD fully automatic and event-driven
 - Docker socket mounting (`/var/run/docker.sock`) allows Jenkins to act as its own Docker agent
 - `localtunnel` is a quick solution for exposing local services during development/testing

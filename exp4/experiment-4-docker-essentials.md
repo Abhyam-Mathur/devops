@@ -1,4 +1,4 @@
-# **Experiment 4: Docker Essentials**
+﻿# **Experiment 4: Docker Essentials**
 
 ## Name: Abhyam Mathur
 
@@ -38,7 +38,6 @@ def health():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 ```
-![](main.py.png)
 **`requirements.txt`:**
 ```
 Flask==2.3.3
@@ -69,7 +68,6 @@ EXPOSE 5000
 # Run the application
 CMD ["python", "app.py"]
 ```
-![](Dockerfile.png)
 ---
 
 ## **Part 2: Using .dockerignore**
@@ -145,7 +143,6 @@ docker build -t username/my-flask-app:1.0 .
 # Tag existing image
 docker tag my-flask-app:latest my-flask-app:v1.0
 ```
-![](Dockerbuild.png)
 
 ### **Step 3: View Image Details**
 ```bash
@@ -177,9 +174,7 @@ docker ps
 # View container logs
 docker logs flask-container
 ```
-![](Dockerrun.png)
 
-![alt text](image-2.png)
 ### **Step 2: Manage Containers**
 ```bash
 # Stop container
@@ -243,7 +238,6 @@ EXPOSE 5000
 # Run application
 CMD ["python", "app.py"]
 ```
-![](Dockermultistage.png)
 
 ### **Step 3: Build and Compare**
 ```bash
@@ -260,8 +254,6 @@ docker images | grep flask-
 # flask-regular     ~250MB
 # flask-multistage  ~150MB (40% smaller!)
 ```
-![](dockerbuild2.png)
-![](dockerimges2.png)
 ---
 
 ## **Part 6: Publishing to Docker Hub**
@@ -279,9 +271,6 @@ docker tag my-flask-app:latest username/my-flask-app:latest
 docker push username/my-flask-app:1.0
 docker push username/my-flask-app:latest
 ```
-![](imagetag.png)
-![](imagepush.png)
-![](repository.png)
 ### **Step 2: Pull and Run from Docker Hub**
 ```bash
 # Pull from Docker Hub (on another machine)
@@ -290,8 +279,6 @@ docker pull username/my-flask-app:latest
 # Run the pulled image
 docker run -d -p 5000:5000 username/my-flask-app:latest
 ```
-![](Dockerpull.png)
-![](run5000.png)
 ---
 
 ## **Part 7: Node.js Example (Quick Version)**
@@ -302,7 +289,6 @@ mkdir my-node-app
 cd my-node-app
 
 ```
-![](nodeapp.png)
 **`app.js`:**
 ```javascript
 const express = require('express');
@@ -321,7 +307,6 @@ app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
 ```
-![](app.js.png)
 
 **`package.json`:**
 ```json
@@ -334,7 +319,6 @@ app.listen(port, () => {
   }
 }
 ```
-![](package.png)
 ### **Step 2: Node.js Dockerfile**
 ```dockerfile
 FROM node:18-alpine
@@ -350,7 +334,6 @@ EXPOSE 3000
 
 CMD ["node", "app.js"]
 ```
-![alt text](image-4.png)
 ### **Step 3: Build and Run**
 ```bash
 # Build image
@@ -365,9 +348,6 @@ curl http://localhost:3000
 
 ---
 
-![alt text](image-5.png)
-![alt text](image-6.png)
-![alt text](testnodeapp.png)
 ---
 
 ## **Essential Docker Commands Cheatsheet**

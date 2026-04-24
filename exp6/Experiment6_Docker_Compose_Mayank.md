@@ -1,4 +1,4 @@
-# Experiment 6: Comparison of Docker Run and Docker Compose
+﻿# Experiment 6: Comparison of Docker Run and Docker Compose
 
 **Name:** Abhyam Mathur
 **Roll No:** R2142230924
@@ -13,7 +13,7 @@ To understand the relationship between `docker run` and Docker Compose, and to c
 
 ---
 
-##  PART A – Theory
+##  PART A â€“ Theory
 
 ### 1. Docker Run (Imperative Approach)
 
@@ -28,7 +28,6 @@ docker run -d \
   -e NGINX_HOST=localhost \
   nginx:alpine
 ```
-![alt text](image.png)
 ### 2. Docker Compose (Declarative Approach)
 
 Docker Compose uses a YAML file (`docker-compose.yml`) to define services, networks, and volumes in a structured format. Instead of multiple commands, a single command is used: `docker compose up -d`
@@ -48,7 +47,6 @@ services:
       NGINX_HOST: localhost
     restart: unless-stopped
 ```
-![alt text](image-1.png)
 
 ### 3. Mapping: Docker Run vs Docker Compose
 
@@ -74,7 +72,7 @@ services:
 
 ---
 
-## 🧪 PART B – Practical Implementation
+## ðŸ§ª PART B â€“ Practical Implementation
 
 ---
 
@@ -93,18 +91,15 @@ docker run -d \
   nginx:alpine
 ```
 
-![alt text](image.png)
 
 **Verify container is running:**
 ```bash
 docker ps
 ```
-![alt text](image-4.png)
 **Access in browser:** `http://localhost:8081`
 
-**📸 Screenshot – Browser output (Docker Run):**
+**ðŸ“¸ Screenshot â€“ Browser output (Docker Run):**
 
-![Browser output - Docker Run localhost:8081]![alt text](image-2.png)
 
 
 
@@ -137,12 +132,10 @@ services:
 ```bash
 docker compose up -d
 ```
-![alt text](image-3.png)
 **Verify:**
 ```bash
 docker compose ps
 ```
-![alt text](image-5.png)
 ---
 
 **Stop containers:**
@@ -152,7 +145,7 @@ docker compose down
 ##### Command Explanation:Docker compose down: Stop and remove all services, networks (but preserves volumes)
 ---
 
-### Task 2: Multi-Container Application — WordPress + MySQL
+### Task 2: Multi-Container Application â€” WordPress + MySQL
 
 ---
 
@@ -162,7 +155,6 @@ docker compose down
 ```bash
 docker network create wp-net
 ```
-![alt text](image-6.png)
 
 **Step 2: Run MySQL container:**
 ```bash
@@ -173,7 +165,6 @@ docker run -d \
   -e MYSQL_DATABASE=wordpress \
   mysql:5.7
 ```
-![alt text](image-7.png)
 **Step 3: Run WordPress container:**
 ```bash
 docker run -d \
@@ -184,18 +175,14 @@ docker run -d \
   -e WORDPRESS_DB_PASSWORD=secret \
   wordpress:latest
 ```
-![alt text](image-8.png)
 **Verify both containers running:**
 ```bash
 docker ps
 ```
-![alt text](image-4.png)
 **Access in browser:** `http://localhost:8082`
 
-**📸 Screenshot – WordPress installation page (via Docker Run):**
-![alt text](<Screenshot 2026-03-19 at 11.02.08 PM.png>)
+**ðŸ“¸ Screenshot â€“ WordPress installation page (via Docker Run):**
 
-![alt text](image-9.png)
 
 > *The WordPress installation page loads at `http://localhost:8082`, confirming both the MySQL and WordPress containers are running and communicating via the `wp-net` Docker network.*
 
@@ -228,7 +215,6 @@ services:
 volumes:
   mysql_data:
 ```
-![alt text](image-10.png)
 **Start application:**
 ```bash
 docker compose up -d
@@ -240,9 +226,8 @@ docker ps
 
 **Access in browser:** `http://localhost:8082`
 
-**📸 Screenshot – WordPress page via Docker Compose:**
+**ðŸ“¸ Screenshot â€“ WordPress page via Docker Compose:**
 
-![alt text](<Screenshot 2026-03-19 at 11.02.08 PM.png>)
 
 **Stop and remove everything:**
 ```bash
@@ -251,7 +236,7 @@ docker compose down -v
 
 ---
 
-## 🔄 PART C – Conversion & Build-Based Tasks
+## ðŸ”„ PART C â€“ Conversion & Build-Based Tasks
 
 ---
 
@@ -271,7 +256,6 @@ docker run -d \
   --restart unless-stopped \
   node:18-alpine
 ```
-![alt text](image-13.png)
 **Equivalent `docker-compose.yml`:**
 ```yaml
 version: '3.8'
@@ -286,7 +270,6 @@ services:
       DEBUG: "false"
     restart: unless-stopped
 ```
-![alt text](image-12.png)
 **Run:**
 ```bash
 docker compose up -d
@@ -296,7 +279,6 @@ docker compose up -d
 ```bash
 docker compose ps
 ```
-![alt text](image-15.png)
 ---
 
 #### Problem 2: Volume + Network Configuration
@@ -322,7 +304,6 @@ docker run -d \
   -e DB_PASS=secret \
   python:3.11-slim
 ```
-![alt text](image-16.png)
 **Equivalent `docker-compose.yml`:**
 ```yaml
 version: '3.8'
@@ -359,7 +340,6 @@ networks:
   app-net:
 ```
 
-![alt text](image-14.png)
 **Run:**
 ```bash
 docker compose up -d
@@ -372,7 +352,7 @@ docker compose down -v
 
 ---
 
-## 📊 Comparison: Docker Run vs Docker Compose
+## ðŸ“Š Comparison: Docker Run vs Docker Compose
 
 | Feature | Docker Run | Docker Compose |
 |---|---|---|
@@ -390,10 +370,10 @@ docker compose down -v
 ##  Result
 
 Successfully completed:
--  Nginx container using Docker Run — verified at `http://localhost:8081`
--  Nginx container using Docker Compose — verified at `http://localhost:8081`
-- WordPress + MySQL using Docker Run — verified at `http://localhost:8082`
--  WordPress + MySQL using Docker Compose — verified at `http://localhost:8082`
+-  Nginx container using Docker Run â€” verified at `http://localhost:8081`
+-  Nginx container using Docker Compose â€” verified at `http://localhost:8081`
+- WordPress + MySQL using Docker Run â€” verified at `http://localhost:8082`
+-  WordPress + MySQL using Docker Compose â€” verified at `http://localhost:8082`
 -  Docker Run to Compose conversion (Problems 1 & 2)
 - Resource limits conversion (Task 4)
 -  Custom Dockerfile with Compose (Task 5)

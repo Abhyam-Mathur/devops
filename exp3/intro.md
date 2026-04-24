@@ -1,4 +1,4 @@
-#  Deploying NGINX Using Different Base Images and Comparing Docker Image Layers
+﻿#  Deploying NGINX Using Different Base Images and Comparing Docker Image Layers
 
 ---
 ## Name: Abhyam Mathur
@@ -91,10 +91,10 @@ Each instruction in Dockerfile creates a layer:
 
 ### Importance of Layers
 
-- More layers → bigger image
-- Bigger images → slower pull time
-- Larger images → more vulnerabilities
-- Fewer layers → faster and more secure
+- More layers â†’ bigger image
+- Bigger images â†’ slower pull time
+- Larger images â†’ more vulnerabilities
+- Fewer layers â†’ faster and more secure
 
 ---
 
@@ -112,27 +112,24 @@ Each instruction in Dockerfile creates a layer:
 
 ---
 
-#  Part 1 — Deploy NGINX Using Official Image
+#  Part 1 â€” Deploy NGINX Using Official Image
 
 ## Step 1: Pull Image
 
 ```bash
 docker pull nginx:latest
 ```
-![](Dockerpull.png)
 
 ## Step 2: Run Container
 
 ```bash
 docker run -d --name nginx-official -p 8080:80 nginx
 ```
-![](Dockerrun.png)
 ## Step 3: Verify
 
 ```bash
 curl http://localhost:8080
 ```
-![](Verify.png)
 
 OR open browser:
 
@@ -155,7 +152,7 @@ docker images nginx
 
 ---
 
-#  Part 2 — Custom NGINX Using Ubuntu Base Image
+#  Part 2 â€” Custom NGINX Using Ubuntu Base Image
 
 ---
 
@@ -183,7 +180,6 @@ CMD ["nginx", "-g", "daemon off;"]
 ```bash
 docker build -t nginx-ubuntu .
 ```
-![](Buildimage.png)
 ---
 
 ## Step 3: Run Container
@@ -191,7 +187,6 @@ docker build -t nginx-ubuntu .
 ```bash
 docker run -d --name nginx-ubuntu -p 8081:80 nginx-ubuntu
 ```
-![](Dockerun.png)
 ---
 
 ## Observations
@@ -206,11 +201,10 @@ docker images nginx-ubuntu
 - Slower startup
 - Larger attack surface
 
-![](Dockerimages.png)
 
 ---
 
-#  Part 3 — Custom NGINX Using Alpine Base Image
+#  Part 3 â€” Custom NGINX Using Alpine Base Image
 
 ---
 
@@ -233,7 +227,6 @@ CMD ["nginx", "-g", "daemon off;"]
 ```bash
 docker build -t nginx-alpine .
 ```
-![](Dockerbuild.png)
 ---
 
 ## Step 3: Run Container
@@ -241,7 +234,6 @@ docker build -t nginx-alpine .
 ```bash
 docker run -d --name nginx-alpine -p 8082:80 nginx-alpine
 ```
-![](Dockeruncontainer.png)
 ---
 
 ## Observations
@@ -250,7 +242,7 @@ docker run -d --name nginx-alpine -p 8082:80 nginx-alpine
 docker images nginx-alpine
 ```
 
-- Very small (~25–30MB)
+- Very small (~25â€“30MB)
 - Minimal dependencies
 - Faster pull time
 - Faster startup
@@ -258,14 +250,13 @@ docker images nginx-alpine
 
 ---
 
-#  Part 4 — Compare Image Sizes
+#  Part 4 â€” Compare Image Sizes
 
 ## Command
 
 ```bash
 docker images | grep nginx
 ```
-![](Compareimages.png)
 
 ## Sample Output
 
@@ -277,7 +268,7 @@ docker images | grep nginx
 
 ---
 
-#  Part 5 — Inspect Image Layers
+#  Part 5 â€” Inspect Image Layers
 
 ## Commands
 
@@ -289,13 +280,13 @@ docker history nginx-alpine
 
 ## Observations
 
-- Ubuntu → many filesystem layers
-- Alpine → minimal layers
-- Official → optimized layers
+- Ubuntu â†’ many filesystem layers
+- Alpine â†’ minimal layers
+- Official â†’ optimized layers
 
 ---
 
-#  Part 6 — Serve Custom HTML Page
+#  Part 6 â€” Serve Custom HTML Page
 
 ## Step 1: Create HTML
 
@@ -303,7 +294,6 @@ docker history nginx-alpine
 mkdir html
 echo "<h1>Hello from Docker NGINX</h1>" > html/index.html
 ```
-![](Createhtml.png)
 
 ## Step 2: Run
 
@@ -321,10 +311,9 @@ Open:
 ```
 http://localhost:8083
 ```
-![](runandverify.png)
 ---
 
-#  Part 7 — Real World Uses of NGINX
+#  Part 7 â€” Real World Uses of NGINX
 
 NGINX is commonly used for:
 

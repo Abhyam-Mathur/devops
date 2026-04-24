@@ -1,4 +1,4 @@
-# Experiment 1: Comparison of Virtual Machine (VM) and Container
+﻿# Experiment 1: Comparison of Virtual Machine (VM) and Container
 
 ## Aim
 
@@ -126,25 +126,21 @@ docker rmi nginx
 
 ### 1. Vagrant Version Check
 
-![Vagrant Version](screenshot/vagrant-verification.jpeg)
 
 *Figure 1: Verification of Vagrant installation on host machine.*
 
 ### 2. Vagrant Virtual Machine Startup
 
-![Vagrant Up](screenshot/vagrant-up.jpeg)
 
 *Figure 2: Successful initialization and startup of Ubuntu VM using Vagrant.*
 
 ### 3. Nginx Running Inside Virtual Machine
 
-![Nginx VM](screenshot/nginx-vm.jpeg)
 
 *Figure 3: Output confirming Nginx web server running inside the virtual machine.*
 
 ### 4. Nginx Running Inside Docker Container (Port 8080)
 
-![Docker Nginx 8080](screenshot/docker-nginx-8080.jpeg)
 
 *Figure 4: Nginx web server deployed using Docker container on port 8080.*
 
