@@ -1,7 +1,7 @@
 ﻿# Experiment 6: Comparison of Docker Run and Docker Compose
 
 **Name:** Abhyam Mathur
-**Roll No:** R2142230924
+**Roll No:** R2142230904
 **Course:** Containerization and DevOps Lab
 **Experiment No:** 6
 
