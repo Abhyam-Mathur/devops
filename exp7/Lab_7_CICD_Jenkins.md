@@ -177,7 +177,7 @@ docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 ### 6.4 Initial Setup
 
 - Install suggested plugins
-- Create admin user (`MayankThakur`)
+- Create admin user (`AbhyamMathur`)
 
 ---
 
@@ -247,7 +247,7 @@ Jenkins runs inside Docker with the Docker socket mounted:
 
 This allows Jenkins to directly control the host's Docker daemon — building and pushing images without needing a separate agent node.
 
-A custom **Permanent Agent** node (`Mayank node macos`) was also configured in Jenkins under `Manage Jenkins → Nodes → New Node` to demonstrate multi-node agent setup.
+A custom **Permanent Agent** node (`Abhyam node macos`) was also configured in Jenkins under `Manage Jenkins → Nodes → New Node` to demonstrate multi-node agent setup.
 
 ---
 
@@ -284,7 +284,7 @@ Successfully implemented a complete CI/CD pipeline where:
 ### Screenshot 2 — Create First Admin User
 ![Create First Admin User]![alt text](image-2.png)
 
-> Creating the admin user `MayankThakur` during Jenkins initial configuration.
+> Creating the admin user `AbhyamMathur` during Jenkins initial configuration.
 
 ---
 
@@ -312,27 +312,27 @@ Successfully implemented a complete CI/CD pipeline where:
 ### Screenshot 6 — Jenkins Account Settings
 ![Jenkins Account Settings]!![alt text](image-6.png)
 
-> Jenkins user account page for `mayankthakur` showing profile, credentials, and email settings via the localtunnel public URL.
+> Jenkins user account page for `abhyammathur` showing profile, credentials, and email settings via the localtunnel public URL.
 
 ---
 
 ### Screenshot 7 — Adding New Node (Agent)
 ![Jenkins New Node Creation]![alt text](image-7.png)
-> Creating a new Permanent Agent node named `Mayank node` in Jenkins under `Manage Jenkins → Nodes → New Node`.
+> Creating a new Permanent Agent node named `Abhyam node` in Jenkins under `Manage Jenkins → Nodes → New Node`.
 
 ---
 
 ### Screenshot 8 — Nodes Dashboard
 ![alt text](image-8.png)
 
-> Jenkins Nodes page showing the `Built-In Node` (Linux aarch64) and the newly added `Mayank node macos` agent.
+> Jenkins Nodes page showing the `Built-In Node` (Linux aarch64) and the newly added `Abhyam node macos` agent.
 
 ---
 
 ### Screenshot 9 — Agent Connection Command
 ![Jenkins Agent Command]![alt text](image-9.png)
 
-> Jenkins displaying the JNLP agent connection commands (Unix/Windows) with a secret token to connect `Mayank node macos` as a remote agent.
+> Jenkins displaying the JNLP agent connection commands (Unix/Windows) with a secret token to connect `Abhyam node macos` as a remote agent.
 
 ---
 

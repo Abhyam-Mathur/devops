@@ -1,7 +1,7 @@
 #  Deploying NGINX Using Different Base Images and Comparing Docker Image Layers
 
 ---
-## Name: Mayank Thakur
+## Name: Abhyam Mathur
 
 
 
@@ -9,7 +9,7 @@
 
 
 Roll no: R2142230924
-Sap-ID: 500123412
+Sap-ID: 500121822
 School of Computer Science,
 
 University of Petroleum and Energy Studies, Dehradun
