@@ -1,7 +1,5 @@
 # Lab Experiment 7: CI/CD Pipeline using Jenkins, GitHub and Docker Hub
 
-**Name:** Mayank Thakur
-**Subject:** Containerization and DevOps
 
 ---
 
