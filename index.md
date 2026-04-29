@@ -145,4 +145,28 @@
 		<p>GitHub webhook-driven build and Docker image publishing pipeline.</p>
 		<a class="button" href="exp7/Lab_7_CICD_Jenkins.html">Open Experiment 7</a>
 	</article>
+
+	<article class="card">
+		<h3>Experiment 9: Ansible</h3>
+		<p>Agentless configuration management, playbooks, inventories, and automated server setup.</p>
+		<a class="button" href="exp9/intro.html">Open Experiment 9</a>
+	</article>
+
+	<article class="card">
+		<h3>Experiment 10: SonarQube</h3>
+		<p>Static code analysis, quality gates, scanner setup, and CI integration.</p>
+		<a class="button" href="exp10/intro.html">Open Experiment 10</a>
+	</article>
+
+	<article class="card">
+		<h3>Experiment 11: Docker Stack Orchestration</h3>
+		<p>Compose to Swarm progression, service scaling, and self-healing orchestration.</p>
+		<a class="button" href="exp11/intro.html">Open Experiment 11</a>
+	</article>
+
+	<article class="card">
+		<h3>Experiment 12: Kubernetes Draft</h3>
+		<p>Core Kubernetes objects, deployments, services, scaling, and cluster basics.</p>
+		<a class="button" href="exp12/intro.html">Open Experiment 12</a>
+	</article>
 </div>
